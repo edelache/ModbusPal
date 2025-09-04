@@ -15,7 +15,7 @@ RUN set -eux && \
 
 WORKDIR /usr/src
 
-RUN wget -cO ivy.zip https://dlcdn.apache.org//ant/ivy/2.5.1/apache-ivy-2.5.1-bin-with-deps.zip && \
+RUN wget -cO ivy.zip https://dlcdn.apache.org/ant/ivy/2.5.3/apache-ivy-2.5.3-bin-with-deps.zip && \
     unzip ivy.zip && \
     rm -f ivy.zip
 
@@ -27,7 +27,7 @@ RUN wget https://repo1.maven.org/maven2/org/python/jython-installer/2.7.4/jython
 WORKDIR /usr/src/app
 COPY . .
 
-RUN ant compile -lib ../apache-ivy-2.5.1/ivy-2.5.1.jar
-RUN ant jar -lib ../apache-ivy-2.5.1/ivy-2.5.1.jar
+RUN ant compile -lib ../apache-ivy-2.5.3/ivy-2.5.3.jar
+RUN ant jar -lib ../apache-ivy-2.5.3/ivy-2.5.3.jar
 
 WORKDIR /usr/src/app/
