@@ -19,11 +19,6 @@ RUN wget -cO ivy.zip https://dlcdn.apache.org/ant/ivy/2.5.3/apache-ivy-2.5.3-bin
     unzip ivy.zip && \
     rm -f ivy.zip
 
-RUN wget https://repo1.maven.org/maven2/org/python/jython-installer/2.7.4/jython-installer-2.7.4.jar && \
-    java -jar jython-installer-2.7.4.jar -s -d /usr/local/jython && \
-    export JYTHON_HOME=/usr/local/jython && export PATH="/usr/local/jython/bin:$PATH" && \
-    echo 'export JYTHON_HOME=/usr/local/jython' >> ~/.profile && echo 'export PATH="/usr/local/jython/bin:$PATH"' >> ~/.profile
-
 WORKDIR /usr/src/app
 COPY . .
 
